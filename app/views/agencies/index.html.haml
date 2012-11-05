@@ -1,0 +1,21 @@
+%h1 Listing Spy Agencies
+
+%table.table.table-striped
+  %tr
+    %th Agency Name
+    %th Agency Address
+    %th Actions
+    %th
+    %th
+
+  - @agencies.each do |agency|
+    %tr
+      %td= agency.name
+      %td= link_to agency.address, agency.address
+      %td= link_to 'Show', agency
+      %td= link_to 'Edit', edit_agency_path(agency)
+      %td= link_to 'Destroy', agency, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Agency', new_agency_path

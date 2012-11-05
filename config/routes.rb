@@ -1,4 +1,7 @@
 TheGreatGame::Application.routes.draw do
+
+  resources :agencies
+  root to: "agencies#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
