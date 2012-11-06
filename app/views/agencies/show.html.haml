@@ -1,6 +1,24 @@
 %p#notice= notice
 
+.left-sidebar
+  = link_to '/emblem.png' do
+    = image_tag '/emblem_thumb.png', alt: @agency.name, class: "agency-emblem"
 
-= link_to 'Edit', edit_agency_path(@agency)
-\|
-= link_to 'Back', agencies_path
+.main-content
+  %h3= @agency.name
+
+  %p
+    %strong Intelligence Access:
+    = @agency.address
+
+  %strong Known Agents:
+  .agents
+    %ul
+      - @agency.agents.each do |agent|
+        %li= link_to agent.code_name, agent_path(agent)
+
+  %hr
+
+  = link_to 'Edit', edit_agency_path(@agency)
+  \|
+  = link_to 'Back', agencies_path

@@ -4,6 +4,7 @@
   %tr
     %th Agency Name
     %th Agency Address
+    %th # Agents
     %th Actions
     %th
     %th
@@ -12,6 +13,7 @@
     %tr
       %td= agency.name
       %td= link_to agency.address, agency.address
+      %td= agency.agents.count
       %td= link_to 'Show', agency
       %td= link_to 'Edit', edit_agency_path(agency)
       %td= link_to 'Destroy', agency, method: :delete, data: { confirm: 'Are you sure?' }

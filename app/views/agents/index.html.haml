@@ -3,6 +3,7 @@
 %table.table.table-striped
   %tr
     %th Code Name
+    %th Agency
     %th Email
     %th Actions
     %th
@@ -11,6 +12,7 @@
   - @agents.each do |agent|
     %tr
       %td= agent.code_name
+      %td= link_to agent.agency.name, agency_path(agent.agency)
       %td= agent.email
       %td= link_to 'Show', agent
       %td= link_to 'Edit', edit_agent_path(agent)

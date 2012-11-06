@@ -1,5 +1,7 @@
 class Agency < ActiveRecord::Base
-	attr_accessible :address, :name
+	has_many :agents, inverse_of: :agency
+
+	attr_accessible :address, :name, :agents
 
 	validates :name, presence: true
 	validates :address, presence: true

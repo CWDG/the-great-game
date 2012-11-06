@@ -17,8 +17,14 @@ body {
  margin-top: 60px;
 }
 
-.intelligence-photo {
+.left-sidebar {
   float: left;
+  width: 200px;
+  min-height: 300px;
   margin-right: 50px;
   margin-bottom: 30px;
+}
+
+.main-content {
+  margin-left: 250px;
 }
