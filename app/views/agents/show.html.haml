@@ -1,0 +1,24 @@
+%p#notice= notice
+
+= link_to '/spy1.jpg' do
+  = image_tag '/spy1_thumb.jpg', alt: @agent.code_name, class: "intelligence-photo"
+
+%h3 Agent #{@agent.code_name}
+
+%p
+  %strong Personal History:
+  Unknown
+
+%p
+  %strong Known Operations History:
+  = link_to "#{@agent.github_link}", @agent.github_link
+
+%p
+  %strong Attempt Contact:
+  = mail_to @agent.email, "#{@agent.email}"
+
+.clearfix
+
+= link_to 'Edit', edit_agent_path(@agent)
+\|
+= link_to 'Back', agents_path

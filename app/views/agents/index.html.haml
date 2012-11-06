@@ -1,0 +1,21 @@
+%h1 Listing Agents
+
+%table.table.table-striped
+  %tr
+    %th Code Name
+    %th Email
+    %th Actions
+    %th
+    %th
+
+  - @agents.each do |agent|
+    %tr
+      %td= agent.code_name
+      %td= agent.email
+      %td= link_to 'Show', agent
+      %td= link_to 'Edit', edit_agent_path(agent)
+      %td= link_to 'Destroy', agent, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Agent', new_agent_path

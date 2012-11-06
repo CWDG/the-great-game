@@ -13,4 +13,12 @@
  *= require_tree .
  */
 
- body { margin-top: 60px;}
+body {
+ margin-top: 60px;
+}
+
+.intelligence-photo {
+  float: left;
+  margin-right: 50px;
+  margin-bottom: 30px;
+}
