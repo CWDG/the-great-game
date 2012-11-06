@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
-gem 'sqlite3'
-
 gem 'jquery-rails'
 gem 'haml-rails'
 
@@ -14,10 +12,15 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :production do
+  gem 'pg'
+end
 
 group :development do
+  gem 'sqlite3'
   gem 'pry'
   gem 'pry-remote'
   gem 'pry-nav'
+  gem 'awesome_print'
 end
 
