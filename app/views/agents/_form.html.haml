@@ -12,7 +12,7 @@
 
   %p
     = f.label :agency, "Agency Affiliation"
-    = f.select :agency_id, options_from_collection_for_select(Agency.all, :id, :name)
+    = f.collection_select :agency_id, Agency.all, :id, :name
 
   %p
     = f.label :email, "Email"
@@ -21,15 +21,6 @@
   %p
     = f.label :github, "Github"
     = f.text_field :github
-
-  %p
-    = f.label :password, "Password"
-    = f.password_field :password
-
-
-  %p
-    = f.label :password_confirmation, "Password Confirmation"
-    = f.password_field :password_confirmation
 
   .actions
     = f.submit 'Save'
